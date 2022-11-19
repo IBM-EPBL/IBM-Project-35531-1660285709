@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>UAEP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+* {
+    /*box-sizing: border-box;*/
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;*/
+}
+
+body {
+    background-image: url(static/img/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.main {
+    display: flex;
+    min-height: 30vh;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+h2 span {
+    display: inline-flex;
+    color: #a1ff34;
+}
+
+h2 span:nth-child(even) {
+    letter-spacing: 0;
+    color: #fff;
+    border-bottom: 8px solid #a1ff34;
+}
+
+h2:hover span:nth-child(even) {
+    overflow: hidden;
+    transition: ease-in-out 0.5s;
+    letter-spacing: -1em;
+}
+
+h2:hover span:nth-child(2) {
+    transition-delay: 0s;
+}
+
+h2:hover span:nth-child(4) {
+    transition-delay: 0.5s;
+}
+
+h2:hover span:nth-child(6) {
+    transition-delay: 1s;
+}
+
+h2:hover span:nth-child(8) {
+    transition-delay: 1.5s;
+}
+
+.mark {
+    width: 500px;
+    padding: 3% 0 0;
+    margin: auto;
+}
+
+label{
+    font-size: 19.3px;
+}
+
+.label1 {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    transform: translate(75%,-136.8%);
+    font-family: sans-serif;
+    font-weight: normal;
+}
+.label2{
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    transform: translate(90%,86%);
+    /*font-family: sans-serif;
+    font-weight: normal;*/
+}
+
+.box {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 660px;
+    margin: 1 auto 100px;
+    padding: 40px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.box input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    /*box-sizing: border-box;*/
+    font-size: 25px;
+    letter-spacing: 1.5px;
+}
+
+.box button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 100%;
+    border: 0;
+    margin: 10px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="main">
+            <div>
+                <h2>
+                    <span>U</span><span>niversity</span>
+                    <span>A</span><span>dmit</span>
+                    <span>E</span><span>ligibility</span>
+                    <span>P</span><span>redictor</span>
+                </h2>
+            </div>
+        </section>
+        <section class="mark">
+            <div class="box">
+                <form name="form" method="post" action="/predict">
+
+
+                    <div class="text">
+                        <label for="gre">Enter GRE Score</label>
+                        <input type="text" id="gre" name="gre" placeholder="GRE Score (out of 340)" required="required"><br>
+                    </div>
+
+
+                    <div class="text">
+                        <label for="toefl">Enter TOEFL Score</label>
+                        <input type="text" id="toefl" name="toefl" placeholder="TOEFL Score (out of 120)" required="required"><br>
+                    </div>
+
+                    <div class="text">
+                        <label>Select University No</label>
+                        <div class="radio">
+                            <input type="radio" name="rating" value="1"><label class="label1" for="rating"> 1</label><br>
+                            <input type="radio" name="rating" value="2"><label class="label1" for="rating"> 2</label><br>
+                            <input type="radio" name="rating" value="3"><label class="label1" for="rating"> 3</label><br>
+                            <input type="radio" name="rating" value="4"><label class="label1" for="rating"> 4</label><br>
+                            <input type="radio" name="rating" value="5"><label class="label1" for="rating"> 5</label><br>
+                        </div>
+                    </div>
+
+                    <div class="text">
+                        <label for="sop">Enter SOP Score</label>
+                        <input type="text" id="sop" name="sop" placeholder="SOP (out of 5)"  required="required">
+                    </div>
+
+
+                    <div class="text">
+                        <label for="lor">Enter LOR Score</label>
+                        <input type="text" id="lor" name="lor" placeholder="LOR (out of 5)"  required="required">
+                    </div>
+
+
+                    <div class="text">
+                        <label for="cgpa">Enter CGPA Score</label>
+                        <input type="text" id="cgpa" name="cgpa" placeholder="CGPA (out of 10)" required="required">
+                    </div>
+
+                    <div class="text">
+                        <label>Research:</label>
+                        <div>
+                            <label class="label2" for="research"> Research</label><br>
+                            <input class="radio" type="radio" name="research" value="0">
+                            <label class="label2" for="research"> No Research</label><br>
+                            <input class="radio" type="radio" name="research" value="1">
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn">Predict</button>
+                    </div>
+
+                    <div>
+                        <button type="reset" class="btn">Reset</button>
+                    </div>
+
+
+
+                </form>
+                {{prediction_text}}
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

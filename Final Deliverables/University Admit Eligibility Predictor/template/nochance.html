@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(static/img/nochance.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
+        }
+
+        .heading {
+            display: flex;
+            min-height: 15vh;
+            align-items: center;
+            justify-content: center;
+            font-family: serif;
+            font-size: 25px;
+        }
+        .paragraph{
+            font-family: serif;
+            font-size: 23.5px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>RESULT</h1>
+        </div>
+        <div class="paragraph">
+            <h2>Predicting Chance of Admission</h2>
+            <span></span>
+            <p>A Machine Learning Web App using Flask.</p>
+            <span></span>
+            <p><strong>Prediction:</strong><span style="font-size: 30px;color: red; "><b>You have a No chance.</b></span></p>
+            <p>Prediction : <b><u>{{prediction_text}}</u></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../static/img/thumbsdown.png" width="40" height="40"></p>
+        </div>
+    </div>
+</body>
+
+</html>
