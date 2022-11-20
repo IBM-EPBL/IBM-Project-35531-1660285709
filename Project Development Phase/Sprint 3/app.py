@@ -52,6 +52,8 @@ def predict():
         return render_template('noChance.html')
     else:
         return render_template('chance.html')
-
+@app.route("/back")
+def back():
+    return render_template('index2.html')
 if __name__ == '__main__':
     app.run(debug=True)
